@@ -56,7 +56,7 @@ RUN set -eux; \
     PKG_DIR="$(find /tmp -maxdepth 1 -type d -name "wenxin2api_*_linux_${TARGETARCH}" | head -n1)"; \
     test -n "${PKG_DIR}"; \
     mkdir -p /out/static; \
-    cp "${PKG_DIR}/ds2api" /out/ds2api; \
+    cp "${PKG_DIR}/wenxin2api" /out/wenxin2api; \
     cp "${PKG_DIR}/config.example.json" /out/config.example.json; \
     cp -R "${PKG_DIR}/static/admin" /out/static/admin
 
