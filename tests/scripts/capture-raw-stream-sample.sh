@@ -31,7 +31,7 @@ BODY_FILE="$(mktemp)"
 
 cleanup() {
   rm -f "$HDR_FILE" "$BODY_FILE"
-  pkill -f "cmd/wenxin2api" >/dev/null 2>&1 || true
+  pkill -f "cmd/ds2api" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 
@@ -39,7 +39,7 @@ wenxin2api_CONFIG_PATH="$CONFIG_PATH" \
 wenxin2api_ADMIN_KEY="$ADMIN_KEY" \
 wenxin2api_DEV_PACKET_CAPTURE=1 \
 wenxin2api_DEV_PACKET_CAPTURE_LIMIT=20 \
-  go run ./cmd/wenxin2api >/tmp/wenxin2api_capture_server.log 2>&1 &
+  go run ./cmd/ds2api >/tmp/wenxin2api_capture_server.log 2>&1 &
 
 for _ in $(seq 1 120); do
   if curl -sSf http://127.0.0.1:5001/healthz >/dev/null 2>&1; then

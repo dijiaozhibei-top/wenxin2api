@@ -239,7 +239,7 @@ async function buildBackend() {
   if (!checkGo()) throw new Error('未找到 Go，请先安装 Go (https://go.dev/dl/)');
   log.info(`编译后端二进制 (GOPROXY: ${MIRRORS.goproxy})...`);
   return new Promise((resolve, reject) => {
-    const proc = spawn('go', ['build', '-o', BINARY, './cmd/wenxin2api'], {
+    const proc = spawn('go', ['build', '-o', BINARY, './cmd/ds2api'], {
       cwd: __dirname,
       stdio: 'inherit',
       shell: isWindows,
@@ -270,7 +270,7 @@ async function buildWebui() {
 async function startBackendDev() {
   if (!checkGo()) throw new Error('未找到 Go，请先安装 Go (https://go.dev/dl/)');
   log.info(`启动后端（go run）... 本地 http://127.0.0.1:${CONFIG.port}  绑定 0.0.0.0:${CONFIG.port}`);
-  const proc = spawn('go', ['run', './cmd/wenxin2api'], {
+  const proc = spawn('go', ['run', './cmd/ds2api'], {
     cwd: __dirname,
     stdio: 'inherit',
     shell: isWindows,

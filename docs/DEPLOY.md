@@ -443,7 +443,7 @@ cp config.example.json config.json
 #   - accounts: DeepSeek 账号（email 或 mobile + password）
 
 # 启动服务
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 默认本地访问地址是 `http://127.0.0.1:5001`；服务实际绑定 `0.0.0.0:5001`，可通过 `PORT` 环境变量覆盖。
@@ -471,16 +471,16 @@ npm run build
 
 ```bash
 # 强制关闭自动构建
-wenxin2api_AUTO_BUILD_WEBUI=false go run ./cmd/wenxin2api
+wenxin2api_AUTO_BUILD_WEBUI=false go run ./cmd/ds2api
 
 # 强制开启自动构建
-wenxin2api_AUTO_BUILD_WEBUI=true go run ./cmd/wenxin2api
+wenxin2api_AUTO_BUILD_WEBUI=true go run ./cmd/ds2api
 ```
 
 ### 4.3 编译为二进制文件
 
 ```bash
-go build -o wenxin2api ./cmd/wenxin2api
+go build -o wenxin2api ./cmd/ds2api
 ./wenxin2api
 ```
 
@@ -632,7 +632,7 @@ curl http://127.0.0.1:5001/v1/chat/completions \
 可自定义参数：
 
 ```bash
-go run ./cmd/wenxin2api-tests \
+go run ./cmd/ds2api-tests \
   --config config.json \
   --admin-key admin \
   --out artifacts/testsuite \

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-wenxin2api converts Baidu Wenxin Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/wenxin2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
+wenxin2api converts Baidu Wenxin Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/ds2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
 
 Module name: `wenxin2api`. Go 1.26+ required. Node 20.19+/22.12+ only needed to build the WebUI.
 
@@ -12,10 +12,10 @@ Module name: `wenxin2api`. Go 1.26+ required. Node 20.19+/22.12+ only needed to 
 
 ```bash
 # Run the server (default port 5001)
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 
 # Build
-go build ./cmd/wenxin2api
+go build ./cmd/ds2api
 
 # Run all unit tests
 go test ./...
@@ -39,11 +39,11 @@ npm run build --prefix webui
 gofmt -w <changed-go-files>
 
 # End-to-end tests (needs real accounts in config.json)
-go run ./cmd/wenxin2api-tests
+go run ./cmd/ds2api-tests
 ./tests/scripts/run-live.sh
 
 # E2E tests skipping preflight checks
-go run ./cmd/wenxin2api-tests --no-preflight
+go run ./cmd/ds2api-tests --no-preflight
 
 # Docker
 docker-compose up -d

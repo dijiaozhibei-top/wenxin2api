@@ -433,7 +433,7 @@ cp config.example.json config.json
 #   - accounts: DeepSeek accounts (email or mobile + password)
 
 # Start
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 Default local access URL: `http://127.0.0.1:5001`; the server actually binds to `0.0.0.0:5001` (override with `PORT`).
@@ -461,16 +461,16 @@ Control auto-build via environment variable:
 
 ```bash
 # Disable auto-build
-wenxin2api_AUTO_BUILD_WEBUI=false go run ./cmd/wenxin2api
+wenxin2api_AUTO_BUILD_WEBUI=false go run ./cmd/ds2api
 
 # Force enable auto-build
-wenxin2api_AUTO_BUILD_WEBUI=true go run ./cmd/wenxin2api
+wenxin2api_AUTO_BUILD_WEBUI=true go run ./cmd/ds2api
 ```
 
 ### 4.3 Compile to Binary
 
 ```bash
-go build -o wenxin2api ./cmd/wenxin2api
+go build -o wenxin2api ./cmd/ds2api
 ./wenxin2api
 ```
 
@@ -622,7 +622,7 @@ Run the full live testsuite before release (real account tests):
 With custom flags:
 
 ```bash
-go run ./cmd/wenxin2api-tests \
+go run ./cmd/ds2api-tests \
   --config config.json \
   --admin-key admin \
   --out artifacts/testsuite \

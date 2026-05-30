@@ -164,7 +164,7 @@ func (r *Runner) startServer(ctx context.Context) error {
 		return err
 	}
 	r.serverLogFd = logFd
-	cmd := exec.CommandContext(ctx, "go", "run", "./cmd/wenxin2api")
+	cmd := exec.CommandContext(ctx, "go", "run", "./cmd/ds2api")
 	cmd.Stdout = logFd
 	cmd.Stderr = logFd
 	cmd.Env = prepareServerEnv(os.Environ(), map[string]string{

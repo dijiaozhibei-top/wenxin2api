@@ -23,10 +23,10 @@ build_one() {
 
   if [[ "$goarm" == "-" ]]; then
     CGO_ENABLED=0 GOOS="$goos" GOARCH="$goarch" \
-      go build -buildvcs=false -trimpath -ldflags="-s -w -X wenxin2api/internal/version.BuildVersion=${build_version}" -o "${stage}/${bin}" ./cmd/wenxin2api
+      go build -buildvcs=false -trimpath -ldflags="-s -w -X wenxin2api/internal/version.BuildVersion=${build_version}" -o "${stage}/${bin}" ./cmd/ds2api
   else
     CGO_ENABLED=0 GOOS="$goos" GOARCH="$goarch" GOARM="$goarm" \
-      go build -buildvcs=false -trimpath -ldflags="-s -w -X wenxin2api/internal/version.BuildVersion=${build_version}" -o "${stage}/${bin}" ./cmd/wenxin2api
+      go build -buildvcs=false -trimpath -ldflags="-s -w -X wenxin2api/internal/version.BuildVersion=${build_version}" -o "${stage}/${bin}" ./cmd/ds2api
   fi
 
   cp config.example.json .env.example LICENSE README.MD README.en.md "${stage}/"
@@ -71,11 +71,11 @@ fi
 mkdir -p dist
 
 if [[ "$jobs" -le 1 ]]; then
-  for target in "${wenxin2api_RELEASE_TARGETS[@]}"; do
+  for target in "${ds2api_RELEASE_TARGETS[@]}"; do
     read -r goos goarch goarm label <<< "$target"
     build_one "$tag" "$build_version" "$goos" "$goarch" "$goarm" "$label"
   done
 else
-  printf '%s\n' "${wenxin2api_RELEASE_TARGETS[@]}" \
+  printf '%s\n' "${ds2api_RELEASE_TARGETS[@]}" \
     | xargs -L 1 -P "$jobs" bash "${ROOT_DIR}/scripts/build-release-archives.sh" --build-one "$tag" "$build_version"
 fi

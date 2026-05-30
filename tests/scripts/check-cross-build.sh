@@ -20,10 +20,10 @@ build_one() {
   mkdir -p "$(dirname "$out")"
   if [[ "$goarm" == "-" ]]; then
     CGO_ENABLED=0 GOOS="$goos" GOARCH="$goarch" \
-      go build -buildvcs=false -trimpath -o "$out" ./cmd/wenxin2api
+      go build -buildvcs=false -trimpath -o "$out" ./cmd/ds2api
   else
     CGO_ENABLED=0 GOOS="$goos" GOARCH="$goarch" GOARM="$goarm" \
-      go build -buildvcs=false -trimpath -o "$out" ./cmd/wenxin2api
+      go build -buildvcs=false -trimpath -o "$out" ./cmd/ds2api
   fi
 }
 

@@ -10,7 +10,7 @@
 
 ```bash
 # 后端
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 
 # WebUI 开发服务器
 npm run dev --prefix webui

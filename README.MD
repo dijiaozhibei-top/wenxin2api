@@ -122,7 +122,7 @@ flowchart LR
 
 详细架构拆分与目录职责见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)。
 
-- **后端**：Go（`cmd/wenxin2api/`、`api/`、`internal/`），不依赖 Python 运行时
+- **后端**：Go（`cmd/ds2api/`、`api/`、`internal/`），不依赖 Python 运行时
 - **前端**：React 管理台（`webui/`），运行时托管静态构建产物
 - **部署**：本地运行、Docker、Vercel Serverless、Linux systemd
 
@@ -313,7 +313,7 @@ cp config.example.json config.json
 # 编辑 config.json，填入你的 DeepSeek 账号信息和 API key
 
 # 3. 启动
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 默认本地访问地址：`http://127.0.0.1:5001`
@@ -391,7 +391,7 @@ Gemini 路由还可以使用 `x-goog-api-key`，或在没有认证头时使用 `
 ```bash
 wenxin2api_DEV_PACKET_CAPTURE=true \
 wenxin2api_DEV_PACKET_CAPTURE_LIMIT=20 \
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 查询/清空（需 Admin JWT）：

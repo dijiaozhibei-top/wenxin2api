@@ -119,7 +119,7 @@ flowchart LR
 
 For the full module-by-module architecture and directory responsibilities, see [docs/ARCHITECTURE.en.md](docs/ARCHITECTURE.en.md).
 
-- **Backend**: Go (`cmd/wenxin2api/`, `api/`, `internal/`), no Python runtime
+- **Backend**: Go (`cmd/ds2api/`, `api/`, `internal/`), no Python runtime
 - **Frontend**: React admin panel (`webui/`), served as static build at runtime
 - **Deployment**: local run, Docker, Vercel serverless, Linux systemd
 
@@ -301,7 +301,7 @@ cp config.example.json config.json
 # Edit config.json with your DeepSeek account info and API keys
 
 # 3. Start
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 Default local URL: `http://127.0.0.1:5001`
@@ -375,7 +375,7 @@ Enable example:
 ```bash
 wenxin2api_DEV_PACKET_CAPTURE=true \
 wenxin2api_DEV_PACKET_CAPTURE_LIMIT=20 \
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 ```
 
 Inspect/clear (Admin JWT required):

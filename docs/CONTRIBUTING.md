@@ -24,7 +24,7 @@ cp config.example.json config.json
 # 编辑 config.json，填入测试账号
 
 # 3. 启动后端
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 # 本地访问 http://127.0.0.1:5001
 # 实际绑定 0.0.0.0:5001，可通过局域网 IP 访问
 ```

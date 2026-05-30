@@ -90,14 +90,14 @@ npm run build --prefix webui
 
 4. **结果收集**：继续执行所有用例（不中断），写入最终汇总
 
-如果你只想跳过这些 preflight 检查，可以直接运行 `go run ./cmd/wenxin2api-tests --no-preflight`。
+如果你只想跳过这些 preflight 检查，可以直接运行 `go run ./cmd/ds2api-tests --no-preflight`。
 
 ---
 
 ## CLI 参数 | CLI Flags
 
 ```bash
-go run ./cmd/wenxin2api-tests \
+go run ./cmd/ds2api-tests \
   --config config.json \
   --admin-key admin \
   --out artifacts/testsuite \
@@ -246,7 +246,7 @@ node --test --test-concurrency=1 tests/node/stream-tool-sieve.test.js tests/node
 ### 跑端到端测试（跳过 preflight）
 
 ```bash
-go run ./cmd/wenxin2api-tests --no-preflight
+go run ./cmd/ds2api-tests --no-preflight
 ```
 
 ### 运行原始流仿真（独立工具）
@@ -302,7 +302,7 @@ POST /admin/dev/raw-samples/save
 ### 指定输出目录和超时
 
 ```bash
-go run ./cmd/wenxin2api-tests \
+go run ./cmd/ds2api-tests \
   --out /tmp/wenxin2api-test \
   --timeout 60
 ```

@@ -24,7 +24,7 @@ cp config.example.json config.json
 # Edit config.json with test accounts
 
 # 3. Run backend
-go run ./cmd/wenxin2api
+go run ./cmd/ds2api
 # Local access: http://127.0.0.1:5001
 # Actual bind: 0.0.0.0:5001, so LAN access is available via your private IP
 ```

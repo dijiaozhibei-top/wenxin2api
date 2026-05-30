@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # goos goarch goarm package-label
-wenxin2api_RELEASE_TARGETS=(
+ds2api_RELEASE_TARGETS=(
   "linux amd64 - linux_amd64"
   "linux arm64 - linux_arm64"
   "linux arm 7 linux_armv7"
