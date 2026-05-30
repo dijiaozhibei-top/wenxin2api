@@ -20,7 +20,7 @@ RUN set -eux; \
     GOARCH="${TARGETARCH:-$(go env GOARCH)}"; \
     BUILD_VERSION_RESOLVED="${BUILD_VERSION:-}"; \
     if [ -z "${BUILD_VERSION_RESOLVED}" ] && [ -f VERSION ]; then BUILD_VERSION_RESOLVED="$(cat VERSION | tr -d "[:space:]")"; fi; \
-    CGO_ENABLED=0 GOOS="${GOOS}" GOARCH="${GOARCH}" go build -buildvcs=false -ldflags="-s -w -X ds2api/internal/version.BuildVersion=${BUILD_VERSION_RESOLVED}" -o /out/ds2api ./cmd/ds2api
+    CGO_ENABLED=0 GOOS="${GOOS}" GOARCH="${GOARCH}" go build -buildvcs=false -ldflags="-s -w -X ds2api/internal/version.BuildVersion=${BUILD_VERSION_RESOLVED}" -o /out/wenxin2api ./cmd/ds2api
 
 FROM busybox:1.36.1-musl AS busybox-tools
 
@@ -33,10 +33,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=busybox-tools /bin/busybox /usr/local/bin/busybox
 EXPOSE 5001
-CMD ["/usr/local/bin/ds2api"]
+CMD ["/usr/local/bin/wenxin2api"]
 
 FROM runtime-base AS runtime-from-source
-COPY --from=go-builder /out/ds2api /usr/local/bin/ds2api
+COPY --from=go-builder /out/wenxin2api /usr/local/bin/wenxin2api
 
 COPY --from=go-builder --chown=ds2api:ds2api /app/config.example.json /app/config.example.json
 COPY --from=webui-builder --chown=ds2api:ds2api /app/static/admin /app/static/admin
@@ -44,16 +44,16 @@ USER ds2api
 
 FROM busybox-tools AS dist-extract
 ARG TARGETARCH
-COPY dist/docker-input/linux_amd64.tar.gz /tmp/ds2api_linux_amd64.tar.gz
-COPY dist/docker-input/linux_arm64.tar.gz /tmp/ds2api_linux_arm64.tar.gz
+COPY dist/docker-input/linux_amd64.tar.gz /tmp/wenxin2api_linux_amd64.tar.gz
+COPY dist/docker-input/linux_arm64.tar.gz /tmp/wenxin2api_linux_arm64.tar.gz
 RUN set -eux; \
     case "${TARGETARCH}" in \
-      amd64) ARCHIVE="/tmp/ds2api_linux_amd64.tar.gz" ;; \
-      arm64) ARCHIVE="/tmp/ds2api_linux_arm64.tar.gz" ;; \
+      amd64) ARCHIVE="/tmp/wenxin2api_linux_amd64.tar.gz" ;; \
+      arm64) ARCHIVE="/tmp/wenxin2api_linux_arm64.tar.gz" ;; \
       *) echo "unsupported TARGETARCH: ${TARGETARCH}" >&2; exit 1 ;; \
     esac; \
     tar -xzf "${ARCHIVE}" -C /tmp; \
-    PKG_DIR="$(find /tmp -maxdepth 1 -type d -name "ds2api_*_linux_${TARGETARCH}" | head -n1)"; \
+    PKG_DIR="$(find /tmp -maxdepth 1 -type d -name "wenxin2api_*_linux_${TARGETARCH}" | head -n1)"; \
     test -n "${PKG_DIR}"; \
     mkdir -p /out/static; \
     cp "${PKG_DIR}/ds2api" /out/ds2api; \
@@ -61,7 +61,7 @@ RUN set -eux; \
     cp -R "${PKG_DIR}/static/admin" /out/static/admin
 
 FROM runtime-base AS runtime-from-dist
-COPY --from=dist-extract /out/ds2api /usr/local/bin/ds2api
+COPY --from=dist-extract /out/wenxin2api /usr/local/bin/wenxin2api
 
 COPY --from=dist-extract --chown=ds2api:ds2api /out/config.example.json /app/config.example.json
 COPY --from=dist-extract --chown=ds2api:ds2api /out/static/admin /app/static/admin
