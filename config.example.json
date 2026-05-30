@@ -1,6 +1,6 @@
 {
   "_comment": "Wenxin2API 配置文件示例 - 复制为 config.json 使用",
-  "_doc": "文档: https://github.com/CJackHwang/ds2api (改造为文心)",
+  "_doc": "文档: https://github.com/dijiaozhibei-top/ds2api (改造为文心)",
   "keys": [
     "your-api-key-1",
     "your-api-key-2"

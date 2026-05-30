@@ -1,6 +1,6 @@
 services:
   wenxin2api:
-    image: ghcr.io/cjackhwang/wenxin2api:latest
+    image: ghcr.io/dijiaozhibei-top/wenxin2api:latest
     container_name: wenxin2api
     restart: always
     env_file:

@@ -13,8 +13,8 @@ import (
 
 const welcomeHTML = `<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>wenxin2api</title>
-<style>body{font-family:Inter,system-ui,sans-serif;background:#030712;color:#f9fafb;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}a{color:#f59e0b;text-decoration:none}main{max-width:700px;padding:24px;text-align:center}h1{font-size:48px;margin:0 0 12px}.links{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap}</style>
-</head><body><main><h1>wenxin2api</h1><p>DeepSeek to OpenAI & Claude Compatible API</p><div class="links"><a href="/admin">管理面板</a><a href="/v1/models">API 状态</a><a href="https://github.com/CJackHwang/wenxin2api" target="_blank">GitHub</a></div></main></body></html>`
+<style>body{font-family:Inter,system-ui,sans-serif;background:#f5f3ff;color:#1a1a2e;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}a{color:#6366f1;text-decoration:none}main{max-width:700px;padding:24px;text-align:center}h1{font-size:48px;margin:0 0 12px}.links{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap}</style>
+</head><body><main><h1>wenxin2api</h1><p>Baidu Wenxin to OpenAI & Claude Compatible API</p><div class="links"><a href="/admin">管理面板</a><a href="/v1/models">API 状态</a><a href="https://github.com/dijiaozhibei-top/wenxin2api" target="_blank">GitHub</a></div></main></body></html>`
 
 type Handler struct {
 	StaticDir string

@@ -16,7 +16,7 @@ Thanks for your interest in contributing to wenxin2api!
 
 ```bash
 # 1. Clone
-git clone https://github.com/CJackHwang/wenxin2api.git
+git clone https://github.com/dijiaozhibei-top/wenxin2api.git
 cd wenxin2api
 
 # 2. Configure
@@ -108,7 +108,7 @@ Before contributing, review the architecture doc sections for request flow and `
 
 ## Reporting Issues
 
-Please use [GitHub Issues](https://github.com/CJackHwang/wenxin2api/issues) and include:
+Please use [GitHub Issues](https://github.com/dijiaozhibei-top/wenxin2api/issues) and include:
 
 - Steps to reproduce
 - Relevant log output

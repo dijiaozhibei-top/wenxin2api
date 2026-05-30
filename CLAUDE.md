@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-wenxin2api converts DeepSeek Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/wenxin2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
+wenxin2api converts Baidu Wenxin Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/wenxin2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
 
 Module name: `wenxin2api`. Go 1.26+ required. Node 20.19+/22.12+ only needed to build the WebUI.
 

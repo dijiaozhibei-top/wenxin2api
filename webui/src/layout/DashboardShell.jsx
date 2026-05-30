@@ -201,7 +201,7 @@ export default function DashboardShell({ token, onLogout, config, fetchConfig, s
                             {versionInfo?.has_update && (
                                 <a
                                     className="inline-flex mt-1 text-[10px] text-amber-500 hover:text-amber-400"
-                                    href={versionInfo?.release_url || 'https://github.com/CJackHwang/wenxin2api/releases/latest'}
+                                    href={versionInfo?.release_url || 'https://github.com/dijiaozhibei-top/wenxin2api/releases/latest'}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
