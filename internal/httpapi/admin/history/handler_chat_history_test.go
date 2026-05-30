@@ -22,9 +22,9 @@ func newChatHistoryAdminHarness(t *testing.T) (*Handler, *chathistory.Store) {
 	if err := os.WriteFile(configPath, []byte(`{}`), 0o644); err != nil {
 		t.Fatalf("write config failed: %v", err)
 	}
-	t.Setenv("DS2API_CONFIG_PATH", configPath)
-	t.Setenv("DS2API_ADMIN_KEY", "admin")
-	t.Setenv("DS2API_CONFIG_JSON", "")
+	t.Setenv("wenxin2api_CONFIG_PATH", configPath)
+	t.Setenv("wenxin2api_ADMIN_KEY", "admin")
+	t.Setenv("wenxin2api_CONFIG_JSON", "")
 	store, err := config.LoadStoreWithError()
 	if err != nil {
 		t.Fatalf("load config store failed: %v", err)

@@ -26,7 +26,7 @@ func boolFrom(v any) bool                    { return adminsettings.BoolFrom(v) 
 
 func newAdminTestHandler(t *testing.T, raw string) *Handler {
 	t.Helper()
-	t.Setenv("DS2API_CONFIG_JSON", raw)
+	t.Setenv("wenxin2api_CONFIG_JSON", raw)
 	store := config.LoadStore()
 	return &Handler{
 		Store: store,

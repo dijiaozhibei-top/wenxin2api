@@ -164,14 +164,14 @@ func (r *Runner) startServer(ctx context.Context) error {
 		return err
 	}
 	r.serverLogFd = logFd
-	cmd := exec.CommandContext(ctx, "go", "run", "./cmd/ds2api")
+	cmd := exec.CommandContext(ctx, "go", "run", "./cmd/wenxin2api")
 	cmd.Stdout = logFd
 	cmd.Stderr = logFd
 	cmd.Env = prepareServerEnv(os.Environ(), map[string]string{
 		"PORT":                    strconv.Itoa(port),
-		"DS2API_CONFIG_PATH":      r.configCopyPath,
-		"DS2API_AUTO_BUILD_WEBUI": "false",
-		"DS2API_CONFIG_JSON":      "",
+		"wenxin2api_CONFIG_PATH":      r.configCopyPath,
+		"wenxin2api_AUTO_BUILD_WEBUI": "false",
+		"wenxin2api_CONFIG_JSON":      "",
 	})
 	if err := cmd.Start(); err != nil {
 		_ = logFd.Close()

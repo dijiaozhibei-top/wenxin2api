@@ -10,7 +10,7 @@ import (
 )
 
 func TestGetVercelConfigFallsBackToSavedConfig(t *testing.T) {
-	t.Setenv("DS2API_CONFIG_JSON", `{"keys":["k1"],"vercel":{"token":"saved-token","project_id":"saved-project","team_id":"saved-team"}}`)
+	t.Setenv("wenxin2api_CONFIG_JSON", `{"keys":["k1"],"vercel":{"token":"saved-token","project_id":"saved-project","team_id":"saved-team"}}`)
 	t.Setenv("VERCEL_TOKEN", "")
 	t.Setenv("VERCEL_PROJECT_ID", "")
 	t.Setenv("VERCEL_TEAM_ID", "")

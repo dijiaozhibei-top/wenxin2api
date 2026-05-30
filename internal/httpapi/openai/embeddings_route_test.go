@@ -17,7 +17,7 @@ import (
 
 func newResolverWithConfigJSON(t *testing.T, cfgJSON string) (*config.Store, *auth.Resolver) {
 	t.Helper()
-	t.Setenv("DS2API_CONFIG_JSON", cfgJSON)
+	t.Setenv("wenxin2api_CONFIG_JSON", cfgJSON)
 	store := config.LoadStore()
 	pool := account.NewPool(store)
 	resolver := auth.NewResolver(store, pool, func(_ context.Context, _ config.Account) (string, error) {

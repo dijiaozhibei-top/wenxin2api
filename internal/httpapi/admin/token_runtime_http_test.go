@@ -17,7 +17,7 @@ import (
 
 func newHTTPAdminHarness(t *testing.T, rawConfig string, ds adminshared.DeepSeekCaller) http.Handler {
 	t.Helper()
-	t.Setenv("DS2API_CONFIG_JSON", rawConfig)
+	t.Setenv("wenxin2api_CONFIG_JSON", rawConfig)
 	store := config.LoadStore()
 	h := &Handler{
 		Store: store,

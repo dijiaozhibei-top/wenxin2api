@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-DS2API converts DeepSeek Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/ds2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
+wenxin2api converts DeepSeek Web chat capabilities into OpenAI, Claude, and Gemini compatible APIs. The backend is Go (`cmd/wenxin2api/`, `api/`, `internal/`), with a small Node.js runtime for Vercel streaming (`api/chat-stream.js`). The admin WebUI is React (`webui/`), built to `static/admin` at deploy time.
 
-Module name: `ds2api`. Go 1.26+ required. Node 20.19+/22.12+ only needed to build the WebUI.
+Module name: `wenxin2api`. Go 1.26+ required. Node 20.19+/22.12+ only needed to build the WebUI.
 
 ## Commands
 
 ```bash
 # Run the server (default port 5001)
-go run ./cmd/ds2api
+go run ./cmd/wenxin2api
 
 # Build
-go build ./cmd/ds2api
+go build ./cmd/wenxin2api
 
 # Run all unit tests
 go test ./...
@@ -39,11 +39,11 @@ npm run build --prefix webui
 gofmt -w <changed-go-files>
 
 # End-to-end tests (needs real accounts in config.json)
-go run ./cmd/ds2api-tests
+go run ./cmd/wenxin2api-tests
 ./tests/scripts/run-live.sh
 
 # E2E tests skipping preflight checks
-go run ./cmd/ds2api-tests --no-preflight
+go run ./cmd/wenxin2api-tests --no-preflight
 
 # Docker
 docker-compose up -d
@@ -112,6 +112,6 @@ Executable tool calls use half-width pipe-delimited DSML form: `<|DSML|tool_call
 
 ## Configuration
 
-`config.example.json` is the template. At runtime, use either a `config.json` file or the `DS2API_CONFIG_JSON` env var (Base64-encoded JSON). `keys`/`api_keys` are client access credentials; `accounts` are DeepSeek upstream accounts (email or mobile login). Model aliases (OpenAI/Claude/Gemini) are configured in `model_aliases`.
+`config.example.json` is the template. At runtime, use either a `config.json` file or the `wenxin2api_CONFIG_JSON` env var (Base64-encoded JSON). `keys`/`api_keys` are client access credentials; `accounts` are DeepSeek upstream accounts (email or mobile login). Model aliases (OpenAI/Claude/Gemini) are configured in `model_aliases`.
 
-Key env vars: `DS2API_ADMIN_KEY`, `DS2API_CONFIG_PATH`, `DS2API_CONFIG_JSON`, `PORT` (default 5001), `DS2API_DEV_PACKET_CAPTURE`.
+Key env vars: `wenxin2api_ADMIN_KEY`, `wenxin2api_CONFIG_PATH`, `wenxin2api_CONFIG_JSON`, `PORT` (default 5001), `wenxin2api_DEV_PACKET_CAPTURE`.

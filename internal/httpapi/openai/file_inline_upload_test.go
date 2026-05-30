@@ -292,7 +292,7 @@ func TestResponsesInlineUploadFailureReturnsInternalServerError(t *testing.T) {
 
 func TestVercelPrepareUploadsInlineFilesBeforeLeasePayload(t *testing.T) {
 	t.Setenv("VERCEL", "1")
-	t.Setenv("DS2API_VERCEL_INTERNAL_SECRET", "stream-secret")
+	t.Setenv("wenxin2api_VERCEL_INTERNAL_SECRET", "stream-secret")
 	ds := &inlineUploadDSStub{}
 	h := &openAITestSurface{Store: mockOpenAIConfig{}, Auth: streamStatusAuthStub{}, DS: ds}
 	r := chi.NewRouter()

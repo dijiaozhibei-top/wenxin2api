@@ -17,7 +17,7 @@ import (
 
 func newDirectTokenResolver(t *testing.T) (*config.Store, *auth.Resolver) {
 	t.Helper()
-	t.Setenv("DS2API_CONFIG_JSON", `{"keys":[],"accounts":[]}`)
+	t.Setenv("wenxin2api_CONFIG_JSON", `{"keys":[],"accounts":[]}`)
 	store := config.LoadStore()
 	pool := account.NewPool(store)
 	resolver := auth.NewResolver(store, pool, func(_ context.Context, _ config.Account) (string, error) {
@@ -28,12 +28,12 @@ func newDirectTokenResolver(t *testing.T) (*config.Store, *auth.Resolver) {
 
 func newManagedKeyResolver(t *testing.T) (*config.Store, *auth.Resolver) {
 	t.Helper()
-	t.Setenv("DS2API_CONFIG_JSON", `{
+	t.Setenv("wenxin2api_CONFIG_JSON", `{
 		"keys":["managed-key"],
 		"accounts":[{"email":"acc@example.com","password":"pwd","token":"account-token"}]
 	}`)
-	t.Setenv("DS2API_ACCOUNT_MAX_INFLIGHT", "1")
-	t.Setenv("DS2API_ACCOUNT_MAX_QUEUE", "0")
+	t.Setenv("wenxin2api_ACCOUNT_MAX_INFLIGHT", "1")
+	t.Setenv("wenxin2api_ACCOUNT_MAX_QUEUE", "0")
 	store := config.LoadStore()
 	pool := account.NewPool(store)
 	resolver := auth.NewResolver(store, pool, func(_ context.Context, _ config.Account) (string, error) {

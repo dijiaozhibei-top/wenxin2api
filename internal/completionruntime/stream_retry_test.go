@@ -64,7 +64,7 @@ func TestExecuteStreamWithRetryUsesSharedRetryPayloadAndUsagePrompt(t *testing.T
 }
 
 func TestExecuteStreamWithRetrySwitchesManagedAccountBeforeFinal429(t *testing.T) {
-	t.Setenv("DS2API_CONFIG_JSON", `{
+	t.Setenv("wenxin2api_CONFIG_JSON", `{
 		"keys":["managed-key"],
 		"accounts":[
 			{"email":"acc1@test.com","password":"pwd"},

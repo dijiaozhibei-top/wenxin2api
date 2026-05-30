@@ -201,7 +201,7 @@ export default function DashboardShell({ token, onLogout, config, fetchConfig, s
                             {versionInfo?.has_update && (
                                 <a
                                     className="inline-flex mt-1 text-[10px] text-amber-500 hover:text-amber-400"
-                                    href={versionInfo?.release_url || 'https://github.com/CJackHwang/ds2api/releases/latest'}
+                                    href={versionInfo?.release_url || 'https://github.com/CJackHwang/wenxin2api/releases/latest'}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -262,7 +262,7 @@ export default function DashboardShell({ token, onLogout, config, fetchConfig, s
                         )}
 
                         <div className="animate-in fade-in duration-500">
-                            <Suspense fallback={<TabLoadingFallback label={activeNavItem?.label || 'DS2API'} />}>
+                            <Suspense fallback={<TabLoadingFallback label={activeNavItem?.label || 'wenxin2api'} />}>
                                 {renderTab()}
                             </Suspense>
                         </div>

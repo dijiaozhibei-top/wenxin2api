@@ -104,7 +104,7 @@ func NewApp() (*App, error) {
 	r.Post("/v1/files", filesHandler.UploadFile)
 	r.Get("/v1/files/{file_id}", filesHandler.RetrieveFile)
 	r.Post("/v1/embeddings", embeddingsHandler.Embeddings)
-	// Root OpenAI aliases support clients configured with the bare DS2API service URL.
+	// Root OpenAI aliases support clients configured with the bare wenxin2api service URL.
 	r.Get("/models", modelsHandler.ListModels)
 	r.Get("/models/{model_id}", modelsHandler.GetModel)
 	r.Post("/chat/completions", chatHandler.ChatCompletions)
