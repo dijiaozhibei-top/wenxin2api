@@ -37,8 +37,8 @@ static/admin/
 internal/webui/assets/admin/
 
 # Go compiled binaries
-ds2api
-ds2api-tests
+/ds2api
+/ds2api-tests
 
 # Environment
 .env.local
@@ -68,6 +68,6 @@ CLAUDE.local.md
 data/
 .codex
 .roomodes
-ds2api.exe
+/ds2api.exe
 wenxin_server.exe
 wxapi*.exe
